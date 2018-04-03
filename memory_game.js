@@ -257,7 +257,7 @@ function saveGame() {
 		  "cardOpen": cardOpen
         }
       };
-      console.log(msg);
+      window.parent.postMessage(msg, "*");
 	  
 }
 
@@ -296,6 +296,9 @@ window.addEventListener("message", function(evt) {
 		$("#gamenoton").hide();
 		$("#gameon").show();
 		
+		// Update the pairs found-text that is visible to the player.
+		$("#pairsfound").text(pairsFound);
+		
 		timer();
 		timerOn = true;
 		send_setting_message();
@@ -305,38 +308,6 @@ window.addEventListener("message", function(evt) {
     }
 });
 
-function load() {
-	pairsFound = 3;
-    seconds = 43;
-	minutes = 0;
-	hours = 0;
-	cards = ["9.png", "2.png", "4.png", "1.png", "3.png", "2.png", "13.png", "12.png", "12.png", 
-			"3.png", "5.png", "1.png", "10.png", "6.png", "14.png", "4.png", "7.png", "8.png",
-			"13.png", "14.png", "6.png", "7.png", "11.png",
-			"9.png", "10.png", "11.png", "5.png", "8.png"];
-	openedCards = ["#18", "#28", "#13", "#25", "#23", "#26"];
-	cardOpen = "#3";
-	pairs = cards.length/2;
-	createCards();
-	openedCards.forEach(function(element) {
-		$(element).attr("src", cards[parseInt(element.substr(1)-1)]);
-	});
-	if (cardOpen != "") {
-		$(cardOpen).attr("src", cards[parseInt(cardOpen.substr(1)-1)]);
-			
-	}
-	$("#startingtexts").hide();
-	$("#gameview").show();
-	$("#gamenoton").hide();
-	$("#gameon").show();
-	
-	// Update the pairs found-text that is visible to the player.
-	$("#pairsfound").text(pairsFound);
-		
-	timer();
-	timerOn = true;
-	send_setting_message();
-}
 //----------------------------------------------------------------------------
 // Finished initial load. Notify Game Store.
 send_setting_message();
