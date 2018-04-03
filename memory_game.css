@@ -1,0 +1,82 @@
+/*
+Description:  WSD 2018, Group Work, Memory Game
+
+Author: Annina Kettunen
+*/
+
+body {
+	background: #9bdcff; 
+	background: linear-gradient(to right, #9bdcff, #16ceb6);
+	font-family: Bradley Hand, cursive;
+}
+button {
+	background: #023e5e;
+	color: #ffffff;
+	font-family: Bradley Hand, cursive;
+	font-size: 20px;
+	float: center;
+	text-align: center;
+	height: 40px;
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+		
+.button-container {
+	text-align: center;
+	float: right;
+	width: 100%;
+}
+		
+#gameview {
+	display: none;
+}
+		
+#gameon {
+	display:none;
+	justify-content:space-between; 
+}
+		
+.grid-container {
+	<!-- display: grid; -->
+	grid-template-columns: auto auto auto auto;
+	padding: 10px;
+	position: fixed;
+	top: 40px;
+			
+	grid-template-rows: auto auto auto auto;
+	max-height: 100vh;
+}
+.grid-item {
+	<!-- display: inline-block; -->
+	display: flex;
+	align-items: center;
+	width: 8vw;
+	height: 17vh;
+	margin: 0.5vw;
+	padding: 1vw;
+	float: left;
+}
+		
+#pairinformation {
+	position: absolute;
+	top: 8px;
+	left: 16px;
+}
+		
+#timeinformation {
+	position: absolute;
+	top: 25px;
+	left: 16px;
+}
+		
+#gameOver {
+	display: none;
+}
+		
+#score {
+	position: fixed;
+	top: 0px;
+	right: 30px;
+	font-size: 25px;
+}

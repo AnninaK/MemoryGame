@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Memory Game </title>
+	<meta name="description" content="WSD 2018, Group Work, Memory Game">
+    <meta name="author" content="Annina Kettunen">
+	<link rel="stylesheet" type="text/css" href="memory_game.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="memory_game.js"></script>
+</head>
+<body>
+	<div id="startingtexts">
+		<h1>Memory Game </h1>
+		<p> In this game you get to test your ability to remember the card pairs. </p>
+		<p> How many pairs do you want to play with? </p>
+		Number of pairs: <input type="number" name="pairnumber" id="pairnumber" min="2" max="16" placeholder="2-16"/><br>
+		<p> When the game begins, click the cards to open them. You can look only two cards at the same time. When you find a pair, you will also get points. Just try to be as fast as you can: time is running! </p>
+		<p> Got the hang of it? Then let's get started! </p>
+		<div class="button-container">
+			<button type="button" id="startbutton" onclick="initializeGame()">New game</button>
+		</div>
+		<p> If you have an old game saved, you can load it here. </p>
+		<div class="button-container">
+			<button type="button" id="load" onclick="load()">Load game</button>
+		</div>
+		
+	</div>
+	<div id="gameview">
+		<p id="gamenoton"> The game will start when you click a card. </p>
+		<div id="gameon">
+			<span id="pairinformation"> Pairs found: <span id="pairsfound"> 0 </span></span>
+			<span id="timeinformation"> Playing time: <span id="timer"><time>00:00:00</time></span> </span>
+			<span class="button-container">
+			<button type="button" id="savebutton" onclick="saveGame()">Save</button>
+			</span>	
+		</div>
+		<div id="gameOver">
+				<div class="button-container">
+				<button type="button" id="submitbutton" onclick="submitScore()"> Submit </button>
+				<button type="button" id="newgamebutton" onclick="buildGameArea(true)"> New game </button>
+				</div>
+				<p id="score"> Your score: <span id="scoretext"> </span></p>
+		</div>
+		
+		<div class="grid-container" id="gamearea">
+			
+		</div>
+	</div>
+</body>
+</html>
