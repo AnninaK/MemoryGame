@@ -228,7 +228,7 @@ function flipCard(cardID, cardnumber) {
 function gameOver() {
 	$("#gameOver").show();
 	$("#savebutton").hide();
-	$("#scoretext").text(parseInt(pairsFound*pairsFound*100/(hours*60*60+minutes*60+seconds)));
+	$("#scoretext").text(parseInt(pairsFound*pairsFound*pairsFound*100/(hours*60*60+minutes*60+seconds)));
 	timerOn = false;
 }
 
