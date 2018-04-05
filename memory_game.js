@@ -289,10 +289,10 @@ window.addEventListener("message", function(evt) {
 		pairs = cards.length/2;
 		createCards();
 		openedCards.forEach(function(element) {
-			$(element).attr("src", cards[parseInt(element.substr(1)-1)]);
+			$(element).attr("src", cards[parseInt(parseInt(element.substr(1))-1)]);
 		});
 		if (cardOpen != "") {
-			$(cardOpen).attr("src", cards[parseInt(cardOpen.substr(1)-1)]);
+			$(cardOpen).attr("src", cards[parseInt(parseInt(cardOpen.substr(1))-1)]);
 		}
 		
 		
