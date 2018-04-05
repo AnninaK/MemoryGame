@@ -272,7 +272,7 @@ function load() {
 //------------------------------------------------------------------------------
 // Listen the messages from the service.
 window.addEventListener("message", function(evt) {
-    if(evt.data.messageType == "LOAD" && evt.data == "") {
+    if(evt.data.messageType == "LOAD" && evt.data.gameState != {}) {
 		// Set this game state as it was when the state was saved.
 		$("#startingtexts").hide();
 		$("#gameview").show();
