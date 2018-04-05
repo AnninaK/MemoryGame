@@ -263,11 +263,11 @@ function saveGame() {
 
 //------------------------------------------------------------------------------
 // Send a request to the service for a state to be sent, if there is one.
-$("#load").click( function (event) {
+function load() { 
 	var msg = {};
     msg.messageType = "LOAD_REQUEST";
     window.parent.postMessage(msg, "*");
-});
+}
 
 //------------------------------------------------------------------------------
 // Listen the messages from the service.
