@@ -272,8 +272,13 @@ function load() {
 //------------------------------------------------------------------------------
 // Listen the messages from the service.
 window.addEventListener("message", function(evt) {
-    if(evt.data.messageType === "LOAD") {
+    if(evt.data.messageType == "LOAD") {
 		// Set this game state as it was when the state was saved.
+		$("#startingtexts").hide();
+		$("#gameview").show();
+		$("#gamenoton").hide();
+		$("#gameon").show();
+		
         pairsFound = evt.data.gameState.pairsFound;
         seconds = evt.data.gameState.seconds;
 		minutes = evt.data.gameState.minutes;
@@ -288,12 +293,8 @@ window.addEventListener("message", function(evt) {
 		});
 		if (cardOpen != "") {
 			$(cardOpen).attr("src", cards[parseInt(cardOpen.substr(1)-1)]);
-			
 		}
-		$("#startingtexts").hide();
-		$("#gameview").show();
-		$("#gamenoton").hide();
-		$("#gameon").show();
+		
 		
 		// Update the pairs found-text that is visible to the player.
 		$("#pairsfound").text(pairsFound);
