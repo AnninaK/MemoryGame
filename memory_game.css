@@ -5,8 +5,9 @@ Author: Annina Kettunen
 */
 
 body {
-	background: #9bdcff; 
-	background: linear-gradient(to right, #9bdcff, #16ceb6);
+	background-image: url("wood.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 	font-family: Bradley Hand, cursive;
 }
 button {

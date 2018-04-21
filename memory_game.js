@@ -16,8 +16,8 @@ var pairsFound = 0;
 var timeoutOn = false;
 
 // Frame size
-var frame_width = 480;
-var frame_heigth = 342;
+var frame_width = 624;
+var frame_heigth = 445;
 
 //------------------------------------------------------------------------------
 // Send a SETTING message to parent window.
