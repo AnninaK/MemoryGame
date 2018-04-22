@@ -16,7 +16,7 @@ var pairsFound = 0;
 var timeoutOn = false;
 
 // Frame size
-var frame_width = 750;
+var frame_width = 850;
 var frame_heigth = 450;
 
 //------------------------------------------------------------------------------
