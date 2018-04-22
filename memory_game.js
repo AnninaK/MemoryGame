@@ -17,7 +17,7 @@ var timeoutOn = false;
 
 // Frame size
 var frame_width = 850;
-var frame_heigth = 450;
+var frame_heigth = 460;
 
 //------------------------------------------------------------------------------
 // Send a SETTING message to parent window.
