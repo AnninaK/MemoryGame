@@ -5,6 +5,9 @@ Description:  WSD 2018, Group Work, Memory Game
 Author: Annina Kettunen
 
 */
+
+/*jshint esversion: 6 */
+
 // Game data
 var pairs;
 var cards = [];
@@ -37,7 +40,7 @@ function send_setting_message()
 function initializeGame() {
 	pairs = document.getElementById("pairnumber").value;
 
-	if (pairs == "") {
+	if (pairs === "") {
 		pairs = 8;
 	} else if (pairs < 2) {
 		pairs = 2;
@@ -168,7 +171,7 @@ function flipCard(cardID, cardnumber) {
 	
 	// If the real game has not started yet, start the timer, show save-button and
 	// hide the guidance text.
-	if (timerOn == false) {
+	if (timerOn === false) {
 		$("#gamenoton").hide();
 		$("#gameon").show();
 		$("#savebutton").show();
@@ -180,7 +183,7 @@ function flipCard(cardID, cardnumber) {
 	$(cardID).attr("src", cards[cardnumber - 1]);
 	
 	// If there was another card opened in this turn, check if these are pairs.
-	if (cardOpen != "") {
+	if (cardOpen !== "") {
 		if (cards[cardnumber-1] == cards[parseInt(cardOpen.substr(1)-1)]) {
 			// Case 1: They are pairs.
 			
@@ -291,7 +294,7 @@ window.addEventListener("message", function(evt) {
 		openedCards.forEach(function(element) {
 			$(element).attr("src", cards[parseInt(parseInt(element.substr(1))-1)]);
 		});
-		if (cardOpen != "") {
+		if (cardOpen !== "") {
 			$(cardOpen).attr("src", cards[parseInt(parseInt(cardOpen.substr(1))-1)]);
 		}
 		
