@@ -9,14 +9,13 @@ body {
     background-repeat: repeat;
     background-attachment: scroll;
 	background-size: cover;
-	font-family: Bradley Hand, cursive;
+	font-family: "Bradley Hand", cursive;
 }
 button {
 	background: #023e5e;
 	color: #ffffff;
-	font-family: Bradley Hand, cursive;
+	font-family: "Bradley Hand", cursive;
 	font-size: 20px;
-	float: center;
 	text-align: center;
 	height: 40px;
 	width: 180px;
@@ -40,17 +39,14 @@ button {
 }
 		
 .grid-container {
-	<!-- display: grid; -->
-	grid-template-columns: auto auto auto auto;
+	grid-template-columns: auto;
 	padding: 10px;
 	position: fixed;
-	top: 40px;
-			
-	grid-template-rows: auto auto auto auto;
+	top: 40px;		
+	grid-template-rows: auto;
 	max-height: 100vh;
 }
 .grid-item {
-	<!-- display: inline-block; -->
 	display: flex;
 	align-items: center;
 	width: 8vw;
